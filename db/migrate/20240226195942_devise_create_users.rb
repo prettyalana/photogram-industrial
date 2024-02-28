@@ -5,7 +5,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
     create_table :users do |t|
       enable_extension("citext")
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
+      t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
@@ -33,7 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.citext :username
+      t.citextrt :username
       t.boolean :private
       t.integer :likes_count, default: 0
       t.integer :comments_count, default: 0

@@ -12,7 +12,6 @@
         <%= link_to "Liked photos", liked_path(@user.username), class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <!--<a class="nav-link" href="#">Feed</a>-->
         <%= link_to "Feed", feed_path(@user.username), class: "nav-link"%>
       </li>
       <li class="nav-item">
@@ -25,6 +24,7 @@
   </div>
 </div>
 
-<% @user.liked_photos.each do |photo| %>
-  <%= render "photos/photo", photo: photo %>
+
+<% @user.followers.each do |follower| %>
+  <%= render "followers/follower", follower: follower %>
 <% end %>

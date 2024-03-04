@@ -6,34 +6,25 @@
 
     <ul class="nav nav-pills nav-justified">
       <li class="nav-item">
-        <!--<a class="nav-link active" href="#">Posts</a>-->
-        <%= link_to "Posts", user_path(@user.username), class: "nav-link"%>
+        <%= link_to "Posts", user_path(@user.username), class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <!--<a class="nav-link" href="#">Liked photos</a>-->
-        <%= link_to "Liked photos", liked_path(@user.username), class: "nav-link"%>
+        <%= link_to "Liked photos", liked_path(@user.username), class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <!--<a class="nav-link" href="#">Feed</a>-->
         <%= link_to "Feed", feed_path(@user.username), class: "nav-link"%>
       </li>
       <li class="nav-item">
-        <!--<a class="nav-link" href="#">Followers</a>-->
         <%= link_to "Followers", followers_path(@user.username), class: "nav-link"%>
       </li>
       <li class="nav-item">
-        <!--<a class="nav-link" href="#">Following</a>-->
         <%= link_to "Following", following_path(@user.username), class: "nav-link"%>
       </li>
     </ul>
-
   </div>
 </div>
 
-<!--<h2>Own photos</h2>-->
 
-<ul>
-  <%@user.own_photos.each do |photo|%>
-   <%= render "photos/photo", photo: photo%>
-    <% end %>
-  </ul>
+<% @user.followers.each do |follower| %>
+  <%= render "followers/follower", follower: follower %>
+<% end %>

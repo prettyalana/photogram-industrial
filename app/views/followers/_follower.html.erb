@@ -13,6 +13,6 @@
 <!--<a href="/follower_path" class="list-group-item list-group-item-action active" aria-current="true">-->
    <%#= follower.username %>
 <!--  </a>-->
-<%= link_to "#{follower.username}" , follower.username
+<%= link_to "#{follower.username}" , user_path(follower.username)
   %>
 </div>
